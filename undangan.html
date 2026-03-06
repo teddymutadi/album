@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .kartu-undangan {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid #ddd;
+        }
+        h1 { color: #d4a373; margin-bottom: 5px; }
+        p { color: #555; }
+        .kotak-nama {
+            background-color: #fefae0;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px dashed #d4a373;
+        }
+        h3 { margin: 0; color: #333; }
+        #nama-tamu {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #bc6c25;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kartu-undangan">
+        <p>The Wedding of</p>
+        <h1>Romeo & Juliet</h1>
+        <p>Sabtu, 20 Mei 2024</p>
+        
+        <div class="kotak-nama">
+            <p style="margin:0; font-size:0.8em;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+            <br>
+            <!-- Ini bagian yang akan berubah otomatis -->
+            <span id="nama-tamu">Tamu Undangan</span>
+        </div>
+
+        <p>Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di acara kami.</p>
+    </div>
+
+    <script>
+        // Kode Javascript untuk mengambil nama dari Link
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('kepada');
+
+        if (nama) {
+            document.getElementById('nama-tamu').innerText = nama;
+        }
+    </script>
+
+</body>
+</html>
